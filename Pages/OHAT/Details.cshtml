@@ -1,0 +1,108 @@
+﻿@page
+@model OralHealthManagement.OHATDetailsModel
+
+@{
+    ViewData["Title"] = "口腔健康評估量表";
+}
+
+    <h1>口腔健康評估量表</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Timestamp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Timestamp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.ChartNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.ChartNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q6)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q6)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q7)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q7)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Q8)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Q8)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Total)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Habbit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Habbit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Pattern)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Pattern)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OHAT.Reason)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OHAT.Reason)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.OHAT.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

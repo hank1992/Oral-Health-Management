@@ -1,0 +1,186 @@
+﻿@page
+@model OralHealthManagement.LungCreateModel
+
+@{
+    ViewData["Title"] = "肺部感染指標";
+}
+
+    <h1>肺部感染指標</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="control-group">
+                @foreach (var item in ViewData.ModelState)
+                {
+                    if (item.Value.Errors.Any())
+                    {
+                        foreach (var e in item.Value.Errors)
+                        {
+                            <p class="text-danger">@e.ErrorMessage</p>
+                        }
+                    }
+                }
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Lung.Timestamp" class="control-label"></label>
+                <input asp-for="Lung.Timestamp" class="form-control" />
+                <span asp-validation-for="Lung.Timestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lung.ChartNo" class="control-label"></label>
+                <input asp-for="Lung.ChartNo" class="form-control" />
+                <span asp-validation-for="Lung.ChartNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lung.Temp" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.Temp" class="form-check-input" value="0" id="Temp0">
+                    <label class="form-check-label" for="Temp0">
+                        > 36.4 且< 38.4
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.Temp" class="form-check-input" value="1" id="Temp1">
+                    <label class="form-check-label" for="Temp1">
+                        ≥ 38.5且< 38.9
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.Temp" class="form-check-input" value="2" id="Temp2">
+                    <label class="form-check-label" for="Temp2">
+                        ≥ 39.0且≤ 36.4
+                    </label>
+                </div>
+                <span asp-validation-for="Lung.Temp" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lung.WBC" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.WBC" class="form-check-input" value="0" id="WBC0">
+                    <label class="form-check-label" for="WBC0">
+                        ≥ 4000且≤ 11000
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.WBC" class="form-check-input" value="1" id="WBC1">
+                    <label class="form-check-label" for="WBC1">
+                        < 4000 或 > 11000
+                    </label>
+                </div>
+                <span asp-validation-for="Lung.WBC" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lung.SputumChar" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.SputumChar" class="form-check-input" value="0" id="SputumChar0">
+                    <label class="form-check-label" for="SputumChar0">
+                        少痰
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.SputumChar" class="form-check-input" value="1" id="SputumChar1">
+                    <label class="form-check-label" for="SputumChar1">
+                        中量痰
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.SputumChar" class="form-check-input" value="2" id="SputumChar2">
+                    <label class="form-check-label" for="SputumChar2">
+                        多量痰
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input asp-for="Lung.ThickSputum" class="form-check-input" id="ThickSputum">
+                    <label class="form-check-label" for="ThickSputum">
+                        膿痰
+                    </label>
+                </div>
+                <span asp-validation-for="Lung.ThickSputum" class="text-danger"></span>
+                <span asp-validation-for="Lung.SputumChar" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lung.O2" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.O2" class="form-check-input" value="0" id="O20">
+                    <label class="form-check-label" for="O20">
+                        > 240 或有 ARDS
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.O2" class="form-check-input" value="2" id="O22">
+                    <label class="form-check-label" for="O22">
+                        ≤ 240 且無 ARDS
+                    </label>
+                </div>
+                <span asp-validation-for="Lung.O2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lung.SputumCul" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.SputumCul" class="form-check-input" value="0" id="SputumCul0">
+                    <label class="form-check-label" for="SputumCul0">
+                        少量致病菌或（PSB < 103 / ml 或 BAL < 104 / ml）
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.SputumCul" class="form-check-input" value="1" id="SputumCul1">
+                    <label class="form-check-label" for="SputumCul1">
+                        中到多量致病菌或（PSB ≥ 103 / ml 或 BAL ≥ 104 / ml）
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input asp-for="Lung.Stain" class="form-check-input" id="Stain">
+                    <label class="form-check-label" for="Stain">
+                        革蘭氏染色與培養結果相同
+                    </label>
+                </div>
+                <span asp-validation-for="Lung.SputumCul" class="text-danger"></span>
+                <span asp-validation-for="Lung.Stain" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lung.LungInf" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.LungInf" class="form-check-input" value="0" id="LungInf0">
+                    <label class="form-check-label" for="LungInf0">
+                        無浸潤
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.LungInf" class="form-check-input" value="1" id="LungInf1">
+                    <label class="form-check-label" for="LungInf1">
+                        廣泛性浸潤
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Lung.LungInf" class="form-check-input" value="2" id="LungInf2">
+                    <label class="form-check-label" for="LungInf2">
+                        局部浸潤病灶
+                    </label>
+                </div>
+                <span asp-validation-for="Lung.LungInf" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

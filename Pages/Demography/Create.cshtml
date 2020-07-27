@@ -1,0 +1,363 @@
+﻿@page
+@model OralHealthManagement.CreateModel
+
+@{
+    ViewData["Title"] = "基本人口學";
+}
+
+    <h1>基本人口學</h1>
+
+<hr />
+<form method="post" id="CreateForm">
+</form>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="control-group">
+                @foreach (var item in ViewData.ModelState)
+                {
+                    if (item.Value.Errors.Any())
+                    {
+                        foreach (var e in item.Value.Errors)
+                        {
+                            <p class="text-danger">@e.ErrorMessage</p>
+                        }
+                    }
+                }
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Demography.IdNo" class="control-label"></label>
+                <input asp-for="Demography.IdNo" class="form-control" />
+                <span asp-validation-for="Demography.IdNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demography.Name" class="control-label"></label>
+                <input asp-for="Demography.Name" class="form-control" />
+                <span asp-validation-for="Demography.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demography.ChartNo" class="control-label"></label>
+                <input asp-for="Demography.ChartNo" class="form-control" />
+                <span asp-validation-for="Demography.ChartNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.Sex" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Demography.Sex" class="form-check-input" value="Male" id="Male">
+                    <label class="form-check-label" for="Male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Demography.Sex" class="form-check-input" value="Female" id="Female">
+                    <label class="form-check-label" for="Female">
+                        Female
+                    </label>
+                </div>
+                <span asp-validation-for="Demography.Sex" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.AdmissionDate" class="control-label"></label>
+                <input asp-for="Demography.AdmissionDate" class="form-control" />
+                <span asp-validation-for="Demography.AdmissionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demography.Dx" class="control-label"></label>
+                <input asp-for="Demography.Dx" class="form-control" />
+                <span asp-validation-for="Demography.Dx" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.Conscious" class="control-label"></label>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Conscious" class="form-check-input" value="清楚" id="Clear">
+                    <label class="form-check-label" for="Clear">
+                        清楚
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Conscious" class="form-check-input" value="混亂" id="Unclear">
+                    <label class="form-check-label" for="Unclear">
+                        混亂
+                    </label>
+                </div>
+                <span asp-validation-for="Demography.Conscious" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="DOB">
+                    生日
+                </label>
+                <input type="date" id="DOB" name="DOB" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.Edu" class="control-label"></label>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Edu" class="form-check-input" value="國小以下(含)" id="edu1">
+                    <label class="form-check-label" for="edu1">
+                        國小以下(含)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Edu" class="form-check-input" value="國中" id="edu2">
+                    <label class="form-check-label" for="edu2">
+                        國中
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Edu" class="form-check-input" value="高中" id="edu3">
+                    <label class="form-check-label" for="edu3">
+                        高中
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Edu" class="form-check-input" value="大學" id="edu4">
+                    <label class="form-check-label" for="edu4">
+                        大學
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Edu" class="form-check-input" value="研究所" id="edu5">
+                    <label class="form-check-label" for="edu5">
+                        研究所
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Edu" class="form-check-input" value="博士" id="edu6">
+                    <label class="form-check-label" for="edu6">
+                        博士
+                    </label>
+                </div>
+                <span asp-validation-for="Demography.Edu" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.RoomType" class="control-label"></label>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.RoomType" class="form-check-input" value="健保4人床" id="RoomType1">
+                    <label class="form-check-label" for="RoomType1">
+                        健保4人床
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.RoomType" class="form-check-input" value="健保3人床" id="RoomType2">
+                    <label class="form-check-label" for="RoomType2">
+                        健保3人床
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.RoomType" class="form-check-input" value="自費2人床" id="RoomType3">
+                    <label class="form-check-label" for="RoomType3">
+                        自費2人床
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.RoomType" class="form-check-input" value="單人床" id="RoomType4">
+                    <label class="form-check-label" for="RoomType4">
+                        單人床
+                    </label>
+                </div>
+                <span asp-validation-for="Demography.RoomType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.FromWhere" class="control-label"></label>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.FromWhere" class="form-check-input" value="家裡" id="FromWhere1">
+                    <label class="form-check-label" for="FromWhere1">
+                        家裡
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.FromWhere" class="form-check-input" value="安養中心" id="FromWhere2">
+                    <label class="form-check-label" for="FromWhere2">
+                        安養中心
+                    </label>
+                </div>
+                <span asp-validation-for="Demography.FromWhere" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.BeenICU" class="control-label"></label>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.BeenICU" class="form-check-input" value="true" id="BeenICU1">
+                    <label class="form-check-label" for="BeenICU1">
+                        是
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.BeenICU" class="form-check-input" value="false" id="BeenICU2">
+                    <label class="form-check-label" for="BeenICU2">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Demography.BeenICU" class="text-danger"></span>
+            </div>
+
+            <label>共病病史</label>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_Dementia" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_Dementia)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_HTN" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_HTN)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_DM" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_DM)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_COPD" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_COPD)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_HF" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_HF)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_CVD" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_CVD)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_Cancer" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_Cancer)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_Liver" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_Liver)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_CRF" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_CRF)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_Imune" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_Imune)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.Comorbidity_Imune" /> @Html.DisplayNameFor(model => model.Demography.Comorbidity_Imune)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.Comorbidity_Other" class="control-label"></label>
+                <input asp-for="Demography.Comorbidity_Other" class="form-control" />
+                <span asp-validation-for="Demography.Comorbidity_Other" class="text-danger"></span>
+            </div>
+            <br>
+            <label>主要照顧者</label>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.CareGiver_Family" /> @Html.DisplayNameFor(model => model.Demography.CareGiver_Family)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.CareGiver_Foreigner" /> @Html.DisplayNameFor(model => model.Demography.CareGiver_Foreigner)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.CareGiver_TW" /> @Html.DisplayNameFor(model => model.Demography.CareGiver_TW)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.CareGiver_None" /> @Html.DisplayNameFor(model => model.Demography.CareGiver_None)
+                </label>
+            </div>
+            <br>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.ReAdmit14D" /> @Html.DisplayNameFor(model => model.Demography.ReAdmit14D)
+                </label>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.AdmitWithEndo" /> @Html.DisplayNameFor(model => model.Demography.AdmitWithEndo)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.AdmitWithNG" /> @Html.DisplayNameFor(model => model.Demography.AdmitWithNG)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.AdmitWithCVC" /> @Html.DisplayNameFor(model => model.Demography.AdmitWithCVC)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Demography.AdmitWithMDR" /> @Html.DisplayNameFor(model => model.Demography.AdmitWithMDR)
+                </label>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <label asp-for="Demography.Antibiotics" class="control-label"></label>(不要使用逗號)
+                <input asp-for="Demography.Antibiotics" class="form-control" />
+                <span asp-validation-for="Demography.Antibiotics" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.MBDDate" class="control-label"></label>
+                <input asp-for="Demography.MBDDate" class="form-control" />
+                <span asp-validation-for="Demography.MBDDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Demography.Solution" class="control-label"></label>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Solution" class="form-check-input" value="N" id="SolutionN">
+                    <label class="form-check-label" for="SolutionN">
+                        N
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Solution" class="form-check-input" value="C" id="SolutionC">
+                    <label class="form-check-label" for="SolutionC">
+                        C
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" asp-for="Demography.Solution" class="form-check-input" value="L" id="SolutionL">
+                    <label class="form-check-label" for="SolutionL">
+                        L
+                    </label>
+                </div>
+                <span asp-validation-for="Demography.Solution" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

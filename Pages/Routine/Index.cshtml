@@ -1,0 +1,114 @@
+﻿@page
+@model OralHealthManagement.RoutineIndexModel
+
+@{
+    ViewData["Title"] = "臨床照護常規資料";
+}
+
+<h1>臨床照護常規資料</h1>
+<p><a class="btn btn-primary" asp-page="Create">Create New</a><br></p>
+
+
+<table class="container-fluid table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].Timestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].ChartNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].Temp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].HR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].RR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].SBP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].DBP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].WBC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].Alb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].BUN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].CRP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].CXR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routine[0].Sputum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Routine)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timestamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChartNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Temp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SBP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DBP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WBC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alb)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BUN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CRP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CXR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sputum)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @using (Html.BeginForm("Export", "Home", FormMethod.Post))
+    {
+        <input class="btn btn-primary" type="submit" id="btnSubmit" value="Export" />
+    }
+</p>

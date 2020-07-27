@@ -1,0 +1,90 @@
+﻿@page
+@model OralHealthManagement.LungDetailsModel
+
+@{
+    ViewData["Title"] = "肺部感染指標";
+}
+
+    <h1>肺部感染指標</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.ChartNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.ChartNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.Timestamp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.Timestamp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.Temp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.Temp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.WBC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.WBC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.SputumChar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.SputumChar)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.ThickSputum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.ThickSputum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.O2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.O2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.SputumCul)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.SputumCul)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.Stain)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.Stain)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.LungInf)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.LungInf)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lung.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lung.Total)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Lung.id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

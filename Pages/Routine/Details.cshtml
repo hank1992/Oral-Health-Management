@@ -1,0 +1,102 @@
+﻿@page
+@model OralHealthManagement.RoutineDetailsModel
+
+@{
+    ViewData["Title"] = "臨床照護常規資料";
+}
+
+    <h1>臨床照護常規資料</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.Timestamp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.Timestamp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.ChartNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.ChartNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.Temp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.Temp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.HR)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.HR)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.RR)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.RR)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.SBP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.SBP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.DBP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.DBP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.WBC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.WBC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.Alb)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.Alb)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.BUN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.BUN)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.CRP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.CRP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.CXR)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.CXR)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Routine.Sputum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Routine.Sputum)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Routine.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

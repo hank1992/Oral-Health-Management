@@ -1,0 +1,107 @@
+﻿@page
+@model OralHealthManagement.RoutineCreateModel
+
+@{
+    ViewData["Title"] = "臨床照護常規資料";
+}
+
+<h1>臨床照護常規資料</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="control-group">
+                @foreach (var item in ViewData.ModelState)
+                {
+                    if (item.Value.Errors.Any())
+                    {
+                        foreach (var e in item.Value.Errors)
+                        {
+                            <p class="text-danger">@e.ErrorMessage</p>
+                        }
+                    }
+                }
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Routine.Timestamp" class="control-label"></label>
+                <input asp-for="Routine.Timestamp" class="form-control" />
+                <span asp-validation-for="Routine.Timestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.ChartNo" class="control-label"></label>
+                <input asp-for="Routine.ChartNo" class="form-control" />
+                <span asp-validation-for="Routine.ChartNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.Temp" class="control-label"></label>
+                <input asp-for="Routine.Temp" class="form-control" />
+                <span asp-validation-for="Routine.Temp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.HR" class="control-label"></label>
+                <input asp-for="Routine.HR" class="form-control" />
+                <span asp-validation-for="Routine.HR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.RR" class="control-label"></label>
+                <input asp-for="Routine.RR" class="form-control" />
+                <span asp-validation-for="Routine.RR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.SBP" class="control-label"></label>
+                <input asp-for="Routine.SBP" class="form-control" />
+                <span asp-validation-for="Routine.SBP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.DBP" class="control-label"></label>
+                <input asp-for="Routine.DBP" class="form-control" />
+                <span asp-validation-for="Routine.DBP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.WBC" class="control-label"></label>
+                <input asp-for="Routine.WBC" class="form-control" />
+                <span asp-validation-for="Routine.WBC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.Alb" class="control-label"></label>
+                <input asp-for="Routine.Alb" class="form-control" />
+                <span asp-validation-for="Routine.Alb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.BUN" class="control-label"></label>
+                <input asp-for="Routine.BUN" class="form-control" />
+                <span asp-validation-for="Routine.BUN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.CRP" class="control-label"></label>
+                <input asp-for="Routine.CRP" class="form-control" />
+                <span asp-validation-for="Routine.CRP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.CXR" class="control-label"></label>
+                <input asp-for="Routine.CXR" class="form-control" />
+                <span asp-validation-for="Routine.CXR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routine.Sputum" class="control-label"></label>
+                <input asp-for="Routine.Sputum" class="form-control" />
+                <span asp-validation-for="Routine.Sputum" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

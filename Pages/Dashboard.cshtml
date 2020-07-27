@@ -1,0 +1,111 @@
+﻿@page
+@model DashboardIndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Dashboard</h1>
+<table class="container-fluid table table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographies[0].IdNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographies[0].ChartNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographies[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographies[0].Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographies[0].AdmissionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographies[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demographies[0].Dx)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Demographies)
+        {
+            <tr>
+                <td><a asp-page="./Demography/Index" asp-route-ChartNo="@item.ChartNo">基本人口學</a></td>
+                <td>
+                    @if (Model.Check_OHM_Routine_Complete(item.ChartNo) == true)
+                    {
+                        <a asp-page="./Routine/Index" asp-route-ChartNo="@item.ChartNo">臨床照護常規資料</a>
+
+                    }
+                </td>
+                <td>
+                    @if (Model.Check_OHM_Lung_Complete(item.ChartNo) == true)
+                    {
+                        <a asp-page="./Lung/Index" asp-route-ChartNo="@item.ChartNo">肺部感染指標</a>
+
+                    }
+                </td>
+                <td>
+                    @if (Model.Check_OHM_Exhaust_Complete(item.ChartNo) == true)
+                    {
+                        <a asp-page="./Exhaust/Index" asp-route-ChartNo="@item.ChartNo">衰弱指標</a>
+
+                    }
+                </td>
+                <td>
+                    @if (Model.Check_OHM_OHAT_Complete(item.ChartNo) == true)
+                    {
+                        <a asp-page="./OHAT/Index" asp-route-ChartNo="@item.ChartNo">口腔健康評估量表</a>
+
+                    }
+                </td>
+                <td>
+                    @if (Model.Check_OHM_Oral6_Complete(item.ChartNo) == true)
+                    {
+                        <a asp-page="./Oral6/Index" asp-route-ChartNo="@item.ChartNo">口腔衰弱六項指標</a>
+
+                    }
+                </td>
+                <td>
+                    @if (Model.Check_OHM_Nutrition_Complete(item.ChartNo) == true)
+                    {
+                        <a asp-page="./Nutrition/Index" asp-route-ChartNo="@item.ChartNo">營養篩檢</a>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChartNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmissionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dx)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

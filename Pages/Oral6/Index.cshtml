@@ -1,0 +1,193 @@
+﻿@page
+@model OralHealthManagement.Oral6IndexModel
+
+@{
+    ViewData["Title"] = "口腔衰弱六項指標";
+}
+
+    <h1>口腔衰弱六項指標</h1>
+
+<p><a class="btn btn-primary" asp-page="Create">Create New</a><br></p>
+
+
+<table class="container-fluid table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Timestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].ChartNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_14)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q2_Result)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q3_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q3_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q3_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q3_4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q4_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q4_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oral6[0].Q6)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Oral6)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timestamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChartNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_6)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_7)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_8)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_9)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_10)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_11)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_12)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_13)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_14)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q2_Result)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q3_1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q3_2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q3_3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q3_4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q4_1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q4_2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Q6)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @using (Html.BeginForm("Export", "Home", FormMethod.Post))
+    {
+    <input class="btn btn-primary" type="submit" id="btnSubmit" value="Export" />
+    }
+</p>

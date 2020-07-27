@@ -1,0 +1,461 @@
+﻿@page
+@model OralHealthManagement.ExhaustEditModel
+
+@{
+    ViewData["Title"] = "衰弱指標";
+}
+
+    <h1>衰弱指標</h1>
+
+<hr />
+<form method="post" id="CreateForm">
+</form>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Exhaust.ChartNo" class="control-label"></label>
+                <input asp-for="Exhaust.ChartNo" class="form-control" />
+                <span asp-validation-for="Exhaust.ChartNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q1" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q1" class="form-check-input" value="0" id="Q1_0">
+                    <label class="form-check-label" for="Q1_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q1" class="form-check-input" value="1" id="Q1_1">
+                    <label class="form-check-label" for="Q1_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q2" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q2" class="form-check-input" value="0" id="Q2_0">
+                    <label class="form-check-label" for="Q2_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q2" class="form-check-input" value="1" id="Q2_1">
+                    <label class="form-check-label" for="Q2_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q3" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q3" class="form-check-input" value="0" id="Q3_0">
+                    <label class="form-check-label" for="Q3_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q3" class="form-check-input" value="1" id="Q3_1">
+                    <label class="form-check-label" for="Q3_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q3" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q4" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q4" class="form-check-input" value="0" id="Q4_0">
+                    <label class="form-check-label" for="Q4_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q4" class="form-check-input" value="1" id="Q4_1">
+                    <label class="form-check-label" for="Q4_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q4" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q5" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q5" class="form-check-input" value="0" id="Q5_0">
+                    <label class="form-check-label" for="Q5_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q5" class="form-check-input" value="1" id="Q5_1">
+                    <label class="form-check-label" for="Q5_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q5" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q6" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q6" class="form-check-input" value="0" id="Q6_0">
+                    <label class="form-check-label" for="Q6_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q6" class="form-check-input" value="1" id="Q6_1">
+                    <label class="form-check-label" for="Q6_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q6" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q7" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q7" class="form-check-input" value="0" id="Q7_0">
+                    <label class="form-check-label" for="Q7_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q7" class="form-check-input" value="1" id="Q7_1">
+                    <label class="form-check-label" for="Q7_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q7" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q8" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q8" class="form-check-input" value="0" id="Q8_0">
+                    <label class="form-check-label" for="Q8_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q8" class="form-check-input" value="1" id="Q8_1">
+                    <label class="form-check-label" for="Q8_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q8" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q9" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q9" class="form-check-input" value="0" id="Q9_0">
+                    <label class="form-check-label" for="Q9_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q9" class="form-check-input" value="1" id="Q9_1">
+                    <label class="form-check-label" for="Q9_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q9" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q10" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q10" class="form-check-input" value="0" id="Q10_0">
+                    <label class="form-check-label" for="Q10_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q10" class="form-check-input" value="1" id="Q10_1">
+                    <label class="form-check-label" for="Q10_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q10" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q11" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q11" class="form-check-input" value="0" id="Q11_0">
+                    <label class="form-check-label" for="Q11_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q11" class="form-check-input" value="1" id="Q11_1">
+                    <label class="form-check-label" for="Q11_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q11" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q12" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q12" class="form-check-input" value="0" id="Q12_0">
+                    <label class="form-check-label" for="Q12_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q12" class="form-check-input" value="1" id="Q12_1">
+                    <label class="form-check-label" for="Q12_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q12" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q13" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q13" class="form-check-input" value="0" id="Q13_0">
+                    <label class="form-check-label" for="Q13_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q13" class="form-check-input" value="1" id="Q13_1">
+                    <label class="form-check-label" for="Q13_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q13" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q14" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q14" class="form-check-input" value="0" id="Q14_0">
+                    <label class="form-check-label" for="Q14_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q14" class="form-check-input" value="1" id="Q14_1">
+                    <label class="form-check-label" for="Q14_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q14" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q15" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q15" class="form-check-input" value="0" id="Q15_0">
+                    <label class="form-check-label" for="Q15_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q15" class="form-check-input" value="1" id="Q15_1">
+                    <label class="form-check-label" for="Q15_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q15" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q16" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q16" class="form-check-input" value="0" id="Q16_0">
+                    <label class="form-check-label" for="Q16_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q16" class="form-check-input" value="1" id="Q16_1">
+                    <label class="form-check-label" for="Q16_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q16" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q17" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q17" class="form-check-input" value="0" id="Q17_0">
+                    <label class="form-check-label" for="Q17_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q17" class="form-check-input" value="1" id="Q17_1">
+                    <label class="form-check-label" for="Q17_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q17" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q18" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q18" class="form-check-input" value="0" id="Q18_0">
+                    <label class="form-check-label" for="Q18_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q18" class="form-check-input" value="1" id="Q18_1">
+                    <label class="form-check-label" for="Q18_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q18" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q19" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q19" class="form-check-input" value="0" id="Q19_0">
+                    <label class="form-check-label" for="Q19_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q19" class="form-check-input" value="1" id="Q19_1">
+                    <label class="form-check-label" for="Q19_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q19" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q20" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q20" class="form-check-input" value="0" id="Q20_0">
+                    <label class="form-check-label" for="Q20_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q20" class="form-check-input" value="1" id="Q20_1">
+                    <label class="form-check-label" for="Q20_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q20" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q21" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q21" class="form-check-input" value="0" id="Q21_0">
+                    <label class="form-check-label" for="Q21_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q21" class="form-check-input" value="1" id="Q21_1">
+                    <label class="form-check-label" for="Q21_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q21" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q22" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q22" class="form-check-input" value="0" id="Q22_0">
+                    <label class="form-check-label" for="Q22_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q22" class="form-check-input" value="1" id="Q22_1">
+                    <label class="form-check-label" for="Q22_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q22" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q23" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q23" class="form-check-input" value="0" id="Q23_0">
+                    <label class="form-check-label" for="Q23_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q23" class="form-check-input" value="1" id="Q23_1">
+                    <label class="form-check-label" for="Q23_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q23" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q24" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q24" class="form-check-input" value="0" id="Q24_0">
+                    <label class="form-check-label" for="Q24_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q24" class="form-check-input" value="1" id="Q24_1">
+                    <label class="form-check-label" for="Q24_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q24" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Exhaust.Q25" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q25" class="form-check-input" value="0" id="Q25_0">
+                    <label class="form-check-label" for="Q25_0">
+                        是
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="Exhaust.Q25" class="form-check-input" value="1" id="Q25_1">
+                    <label class="form-check-label" for="Q25_1">
+                        否
+                    </label>
+                </div>
+                <span asp-validation-for="Exhaust.Q25" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

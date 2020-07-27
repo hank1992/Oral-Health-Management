@@ -1,0 +1,279 @@
+﻿@page
+@model OralHealthManagement.OHATCreateModel
+
+@{
+    ViewData["Title"] = "口腔健康評估量表";
+}
+
+<h1>口腔健康評估量表</h1>
+
+<hr />
+<form method="post" id="CreateForm">
+</form>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="control-group">
+                @foreach (var item in ViewData.ModelState)
+                {
+                    if (item.Value.Errors.Any())
+                    {
+                        foreach (var e in item.Value.Errors)
+                        {
+                            <p class="text-danger">@e.ErrorMessage</p>
+                        }
+                    }
+                }
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OHAT.Timestamp" class="control-label"></label>
+                <input asp-for="OHAT.Timestamp" class="form-control" />
+                <span asp-validation-for="OHAT.Timestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OHAT.ChartNo" class="control-label"></label>
+                <input asp-for="OHAT.ChartNo" class="form-control" />
+                <span asp-validation-for="OHAT.ChartNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q1" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q1" class="form-check-input" value="0" id="Q1_0">
+                    <label class="form-check-label" for="Q1_0">
+                        平滑、粉紅、濕潤
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q1" class="form-check-input" value="1" id="Q1_1">
+                    <label class="form-check-label" for="Q1_1">
+                        乾裂、嘴角紅
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q1" class="form-check-input" value="2" id="Q1_2">
+                    <label class="form-check-label" for="Q1_2">
+                        潰瘍出血
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q2" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q2" class="form-check-input" value="0" id="Q2_0">
+                    <label class="form-check-label" for="Q2_0">
+                        粉紅、濕潤、可見乳突
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q2" class="form-check-input" value="1" id="Q2_1">
+                    <label class="form-check-label" for="Q2_1">
+                        發紅、發紫、蒼白、乾裂、舌苔覆蓋
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q2" class="form-check-input" value="2" id="Q2_2">
+                    <label class="form-check-label" for="Q2_2">
+                        非常紅或白斑、潰瘍(出血或不出血)
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q3" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q3" class="form-check-input" value="0" id="Q3_0">
+                    <label class="form-check-label" for="Q3_0">
+                        粉紅、結實、濕潤
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q3" class="form-check-input" value="1" id="Q3_1">
+                    <label class="form-check-label" for="Q3_1">
+                        乾燥浮腫(蒼白或發紅)、有一個白斑
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q3" class="form-check-input" value="2" id="Q3_2">
+                    <label class="form-check-label" for="Q3_2">
+                        潰瘍出血、多於一個白斑
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q3" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q4" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q4" class="form-check-input" value="0" id="Q4_0">
+                    <label class="form-check-label" for="Q4_0">
+                        容易吐出、唾液成水狀
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q4" class="form-check-input" value="1" id="Q4_1">
+                    <label class="form-check-label" for="Q4_1">
+                        不易吐出、唾液少且黏稠
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q4" class="form-check-input" value="2" id="Q4_2">
+                    <label class="form-check-label" for="Q4_2">
+                        無法吐出、唾液很少且非常黏稠
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q4" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q5" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q5" class="form-check-input" value="0" id="Q5_0">
+                    <label class="form-check-label" for="Q5_0">
+                        沒有齟齒或斷牙
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q5" class="form-check-input" value="1" id="Q5_1">
+                    <label class="form-check-label" for="Q5_1">
+                        1-3 顆齟齒或斷牙
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q5" class="form-check-input" value="2" id="Q5_2">
+                    <label class="form-check-label" for="Q5_2">
+                        4 顆以上齟齒、斷牙或牙齒少於 4 顆
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q5" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q6" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q6" class="form-check-input" value="0" id="Q6_0">
+                    <label class="form-check-label" for="Q6_0">
+                        沒損壞，有規律戴(或無假牙)
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q6" class="form-check-input" value="1" id="Q6_1">
+                    <label class="form-check-label" for="Q6_1">
+                        1 處損壞，每天戴 1-2 小時
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q6" class="form-check-input" value="2" id="Q6_2">
+                    <label class="form-check-label" for="Q6_2">
+                        多於 1 處損壞，沒有戴、假牙需黏合
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q6" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q7" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q7" class="form-check-input" value="0" id="Q7_0">
+                    <label class="form-check-label" for="Q7_0">
+                        清潔且沒有食物 殘渣
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q7" class="form-check-input" value="1" id="Q7_1">
+                    <label class="form-check-label" for="Q7_1">
+                        局部牙菌斑或食物殘渣
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q7" class="form-check-input" value="2" id="Q7_2">
+                    <label class="form-check-label" for="Q7_2">
+                        多處牙菌斑或食物殘渣
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q7" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Q8" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q8" class="form-check-input" value="0" id="Q8_0">
+                    <label class="form-check-label" for="Q8_0">
+                        沒有行為、言語或生理現象表示
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q8" class="form-check-input" value="1" id="Q8_1">
+                    <label class="form-check-label" for="Q8_1">
+                        有行為或言語現象表示，例 如： 拉臉、咬唇或不吃東西
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Q8" class="form-check-input" value="2" id="Q8_2">
+                    <label class="form-check-label" for="Q8_2">
+                        有生理現象表示，例如：臉腫、大片潰瘍，時會加上行為或言語現象表示
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Q8" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Habbit" class="control-label"></label>
+                <input asp-for="OHAT.Habbit" class="form-control" />
+                <span asp-validation-for="OHAT.Habbit" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Pattern" class="control-label"></label>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Pattern" class="form-check-input" value="早上一次" id="Pattern_0">
+                    <label class="form-check-label" for="Pattern_0">
+                        早上一次
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Pattern" class="form-check-input" value="晚上一次" id="Pattern_1">
+                    <label class="form-check-label" for="Pattern_1">
+                        晚上一次
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Pattern" class="form-check-input" value="早晚各一次" id="Pattern_2">
+                    <label class="form-check-label" for="Pattern_2">
+                        早晚各一次
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input type="radio" asp-for="OHAT.Pattern" class="form-check-input" value="其他" id="Pattern_3">
+                    <label class="form-check-label" for="Pattern_3">
+                        其他
+                    </label>
+                </div>
+                <span asp-validation-for="OHAT.Pattern" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OHAT.Reason" class="control-label"></label>
+                <input asp-for="OHAT.Reason" class="form-control" />
+                <span asp-validation-for="OHAT.Reason" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

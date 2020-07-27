@@ -1,0 +1,255 @@
+﻿@page
+@model OralHealthManagement.IndexModel
+
+@{
+    ViewData["Title"] = "基本人口學";
+}
+
+<h1>基本人口學</h1>
+<p><a class="btn btn-primary" asp-page="Create">Create New</a><br></p>
+
+<table class="container-fluid table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].IdNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].ChartNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].AdmissionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Dx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Conscious)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Edu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].RoomType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].FromWhere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].BeenICU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_Dementia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_HTN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_DM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_COPD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_HF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_CVD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_Cancer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_Liver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_CRF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_Imune)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Comorbidity_Other)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].CareGiver_Family)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].CareGiver_Foreigner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].CareGiver_TW)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].CareGiver_None)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].ReAdmit14D)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].AdmitWithEndo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].AdmitWithNG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].AdmitWithCVC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].AdmitWithMDR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Antibiotics)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].MBDDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].LengthOfStay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Demography[0].Solution)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Demography)
+        {
+            <tr>
+                <td>
+                    @(item.IdNo.ToString("D3"))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChartNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmissionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dx)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conscious)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FromWhere)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BeenICU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_Dementia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_HTN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_DM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_COPD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_HF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_CVD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_Cancer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_Liver)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_CRF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_Imune)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comorbidity_Other)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CareGiver_Family)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CareGiver_Foreigner)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CareGiver_TW)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CareGiver_None)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReAdmit14D)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmitWithEndo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmitWithNG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmitWithCVC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmitWithMDR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Antibiotics)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MBDDate)
+                </td>
+                <td>
+                    @if (item.MBDDate != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.LengthOfStay)
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Solution)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ChartNo">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ChartNo">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ChartNo">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @using (Html.BeginForm("Export", "Home", FormMethod.Post))
+    {
+        <input class="btn btn-primary" type="submit" id="btnSubmit" value="Export" />
+    }
+</p>
