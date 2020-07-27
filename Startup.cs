@@ -25,7 +25,6 @@ namespace OralHealthManagement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
             services.AddDbContext<OralHealthManagementContext>(options =>
                 options.UseSqlServer(Configuration["ConnectionStrings"]));
         }
