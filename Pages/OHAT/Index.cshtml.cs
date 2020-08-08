@@ -55,9 +55,9 @@ namespace OralHealthManagement
                 sb.Append(demo.Q6.ToString() + ',');
                 sb.Append(demo.Q7.ToString() + ',');
                 sb.Append(demo.Q8.ToString() + ',');
-                sb.Append(demo.Total.ToString());
-                sb.Append(demo.Habbit.ToString());
-                sb.Append(demo.Pattern);
+                sb.Append(demo.Total.ToString() + ',');
+                sb.Append(demo.Habbit.ToString() + ',');
+                sb.Append(demo.Pattern + ',');
                 sb.Append(demo.Reason);
 
                 //Append new line character.
