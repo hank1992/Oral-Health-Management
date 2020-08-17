@@ -9,3 +9,7 @@ Case Management System for Oral Health Project
   <li>Azure Active Directory</li>
   <li>Key Vault</li>
 </ul>
+
+## Screenshot
+<img src="Figures/Home.PNG">
+<img src="Figures/Nut.PNG">
