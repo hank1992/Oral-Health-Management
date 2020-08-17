@@ -5,7 +5,7 @@ Case Management System for Oral Health Project
 <ul>
   <li>Azure WebApp: AutoScaling, AlwaysOn</li>
   <li>Azure Repos</li>
-  <li>Azure DevOps: CI, CD, Swap</li>
+  <li>Azure DevOps: Azure Repos, Azure Pipelines (CI, CD, Swap)</li>
   <li>Azure SQL Database: Geo-replication</li>
   <li>Azure Active Directory</li>
   <li>Key Vault</li>
