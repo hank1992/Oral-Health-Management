@@ -36,14 +36,15 @@ namespace OralHealthManagement
 
         public FileResult OnPost()
         {
-            List<Lung> Lung = _context.Lung.ToList<Lung>();
+            List<Lung_IdNo> Lung_IdNo = _context.Lung_IdNo.FromSqlRaw("SELECT IdNo,[id],l.[ChartNo],[Timestamp],[Temp],[WBC],[SputumChar],[O2],[SputumCul],[LungInf],[Total],[ThickSputum],[Stain] FROM OHM_Lung l INNER JOIN OHM_Demography d on l.ChartNo=d.ChartNo").ToList<Lung_IdNo>();
             StringBuilder sb = new StringBuilder();
             //Column
-            sb.Append("[id],[ChartNo],[Timestamp],[Temp],[WBC],[SputumChar],[O2],[SputumCul],[LungInf],[Total],[ThickSputum],[Stain]\r\n");
+            sb.Append("IdNo,[id],[ChartNo],[Timestamp],[Temp],[WBC],[SputumChar],[O2],[SputumCul],[LungInf],[Total],[ThickSputum],[Stain]\r\n");
 
-            foreach (var demo in Lung)
+            foreach (var demo in Lung_IdNo)
             {
                 //Append data with separator.
+                sb.Append(demo.IdNo.ToString() + ',');
                 sb.Append(demo.id + ',');
                 sb.Append(demo.ChartNo + ',');
                 sb.Append(demo.Timestamp.ToString("yyyy-MM-dd HH:mm:ss:ff") + ',');

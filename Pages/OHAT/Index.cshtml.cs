@@ -35,15 +35,16 @@ namespace OralHealthManagement
         }
         public FileResult OnPost()
         {
-            List<OHAT> OHAT = _context.OHAT.ToList<OHAT>();
+            List<OHAT_IdNo> OHAT_IdNo = _context.OHAT_IdNo.FromSqlRaw("SELECT IdNo,[Id],[Timestamp],o.[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Total],Habbit,Pattern,Reason FROM OHM_OHAT o INNER JOIN OHM_Demography d on o.ChartNo=d.ChartNo").ToList<OHAT_IdNo>();
             StringBuilder sb = new StringBuilder();
             //Column
-            sb.Append("[Id],[Timestamp],[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Total],刷牙習慣(次/天),刷牙型態,住院後刷牙減少原因");
+            sb.Append("IdNo,[Id],[Timestamp],[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Total],刷牙習慣(次/天),刷牙型態,住院後刷牙減少原因");
             //Append new line character.
             sb.Append("\r\n");
-            foreach (var demo in OHAT)
+            foreach (var demo in OHAT_IdNo)
             {
                 //Append data with separator.
+                sb.Append(demo.IdNo.ToString() + ',');
                 sb.Append(demo.Id + ',');
                 sb.Append(demo.Timestamp.ToString("yyyy-MM-dd HH:mm:ss:ff") + ',');
                 sb.Append(demo.ChartNo + ',');

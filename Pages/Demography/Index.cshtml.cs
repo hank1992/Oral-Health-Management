@@ -41,13 +41,14 @@ namespace OralHealthManagement
             List<Demography> Demography = _context.Demography.ToList<Demography>();
             StringBuilder sb = new StringBuilder();
             //Column
-            sb.Append("[Name],[ChartNo],[Sex],[AdmissionDate],[Dx],[Conscious],[Age],[Edu],[RoomType],[FromWhere],[BeenICU],[Comorbidity_Dementia],[Comorbidity_HTN],[Comorbidity_DM],[Comorbidity_COPD]" +
+            sb.Append("IdNo, [Name],[ChartNo],[Sex],[AdmissionDate],[Dx],[Conscious],[Age],[Edu],[RoomType],[FromWhere],[BeenICU],[Comorbidity_Dementia],[Comorbidity_HTN],[Comorbidity_DM],[Comorbidity_COPD]" +
                 ",[Comorbidity_HF],[Comorbidity_CVD],[Comorbidity_Cancer],[Comorbidity_Liver],[Comorbidity_CRF],[Comorbidity_Imune],[Comorbidity_Other],[CareGiver_Family]" +
                 ",[CareGiver_Foreigner],[CareGiver_TW],[CareGiver_None],[ReAdmit14D],[AdmitWithEndo],[AdmitWithNG],[AdmitWithCVC],[AdmitWithMDR],[Antibiotics],MBDDate,[LengthOfStay],Gargle\r\n");
 
             foreach (var demo in Demography)
             {
                 //Append data with separator.
+                sb.Append(demo.IdNo.ToString() + ',');
                 sb.Append(demo.Name + ',');
                 sb.Append(demo.ChartNo + ',');
                 sb.Append(demo.Sex + ',');

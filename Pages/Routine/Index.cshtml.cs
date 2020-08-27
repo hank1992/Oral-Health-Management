@@ -24,7 +24,8 @@ namespace OralHealthManagement
 
         public async Task OnGetAsync(string ChartNo)
         {
-            if (ChartNo != null) { 
+            if (ChartNo != null)
+            {
                 Routine = await _context.Routine.Where(x => x.ChartNo == ChartNo).OrderByDescending(x => x.Timestamp).ThenBy(x => x.ChartNo).ToListAsync();
             }
             else
@@ -35,15 +36,16 @@ namespace OralHealthManagement
 
         public FileResult OnPost()
         {
-            List<Routine> Routine = _context.Routine.ToList<Routine>();
+            List<Routine_IdNo> Routine_IdNo = _context.Routine_IdNo.FromSqlRaw("SELECT IdNo,[id],[Timestamp],r.[ChartNo],[Temp],[HR],[RR],[SBP],[DBP],[WBC],[Alb],[BUN],[CRP],[CXR],[Sputum] FROM OHM_Routine r INNER JOIN OHM_Demography d on r.ChartNo=d.ChartNo").ToList<Routine_IdNo>();
             StringBuilder sb = new StringBuilder();
             //Column
-            sb.Append("[id],[Timestamp],[ChartNo],[Temp],[HR],[RR],[SBP],[DBP],[WBC],[Alb],[BUN],[CRP],[CXR],[Sputum]");
+            sb.Append("IdNo,[id],[Timestamp],[ChartNo],[Temp],[HR],[RR],[SBP],[DBP],[WBC],[Alb],[BUN],[CRP],[CXR],[Sputum]");
             //Append new line character.
             sb.Append("\r\n");
-            foreach (var demo in Routine)
+            foreach (var demo in Routine_IdNo)
             {
                 //Append data with separator.
+                sb.Append(demo.IdNo.ToString() + ',');
                 sb.Append(demo.ID + ',');
                 sb.Append(demo.Timestamp.ToString("yyyy-MM-dd HH:mm:ss:ff") + ',');
                 sb.Append(demo.ChartNo + ',');
@@ -58,7 +60,7 @@ namespace OralHealthManagement
                 sb.Append(demo.CRP.ToString() + ',');
                 sb.Append(demo.CXR + ',');
                 sb.Append(demo.Sputum);
-                
+
                 //Append new line character.
                 sb.Append("\r\n");
             }

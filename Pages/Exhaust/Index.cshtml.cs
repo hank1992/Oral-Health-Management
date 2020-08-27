@@ -36,16 +36,17 @@ namespace OralHealthManagement
 
         public FileResult OnPost()
         {
-            List<Exhaust> Exhaust = _context.Exhaust.ToList<Exhaust>();
+            List<Exhaust_IdNo> Exhaust_IdNo = _context.Exhaust_IdNo.FromSqlRaw("SELECT IdNo,e.[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Q9],[Q10],[Q11],[Q12],[Q13],[Q14],[Q15],[Q16],[Q17],[Q18],[Q19],[Q20],[Q21],[Q22],[Q23],[Q24],[Q25],[Result],[Total] FROM OHM_Exhaust e INNER JOIN OHM_Demography d on e.ChartNo=d.ChartNo").OrderBy(x => x.ChartNo).ToList<Exhaust_IdNo>();
             StringBuilder sb = new StringBuilder();
             //Column
-            sb.Append("[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Q9],[Q10],[Q11],[Q12],[Q13],[Q14],[Q15],[Q16],[Q17],[Q18],[Q19],[Q20],[Q21],[Q22],[Q23],[Q24]" +
+            sb.Append("IdNo, [ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Q9],[Q10],[Q11],[Q12],[Q13],[Q14],[Q15],[Q16],[Q17],[Q18],[Q19],[Q20],[Q21],[Q22],[Q23],[Q24]" +
                 ",[Q25],[Total],[Result]");
             //Append new line character.
             sb.Append("\r\n");
-            foreach (var demo in Exhaust)
+            foreach (var demo in Exhaust_IdNo)
             {
                 //Append data with separator.
+                sb.Append(demo.IdNo.ToString() + ',');
                 sb.Append(demo.ChartNo + ',');
                 sb.Append(demo.Q1.ToString() + ',');
                 sb.Append(demo.Q2.ToString() + ',');

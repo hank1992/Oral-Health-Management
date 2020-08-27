@@ -35,15 +35,16 @@ namespace OralHealthManagement
         }
         public FileResult OnPost()
         {
-            List<Nutrition> Nutrition = _context.Nutrition.ToList<Nutrition>();
+            List<Nutrition_IdNo> Nutrition_IdNo = _context.Nutrition_IdNo.FromSqlRaw("SELECT IdNo, [Id],[Timestamp],n.[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Total],Result FROM OHM_Nutrition n INNER JOIN OHM_Demography d on n.ChartNo=d.ChartNo").ToList<Nutrition_IdNo>();
             StringBuilder sb = new StringBuilder();
             //Column
-            sb.Append("[Id],[Timestamp],[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Total],Result");
+            sb.Append("IdNo, [Id],[Timestamp],[ChartNo],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Total],Result");
             //Append new line character.
             sb.Append("\r\n");
-            foreach (var demo in Nutrition)
+            foreach (var demo in Nutrition_IdNo)
             {
                 //Append data with separator.
+                sb.Append(demo.IdNo.ToString() + ',');
                 sb.Append(demo.Id + ',');
                 sb.Append(demo.Timestamp.ToString("yyyy-MM-dd HH:mm:ss:ff") + ',');
                 sb.Append(demo.ChartNo + ',');

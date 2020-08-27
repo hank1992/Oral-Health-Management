@@ -37,16 +37,20 @@ namespace OralHealthManagement
 
         public FileResult OnPost()
         {
-            List<Oral6> Oral6 = _context.Oral6.ToList<Oral6>();
+            List<Oral6_IdNo> Oral6_IdNo = _context.Oral6_IdNo.FromSqlRaw("SELECT IdNo,[Id],[Timestamp],o.[ChartNo],[Q1],[Q2_1],[Q2_2],[Q2_3],[Q2_4],[Q2_5]" +
+                ",[Q2_6],[Q2_7],[Q2_8],[Q2_9],[Q2_10],[Q2_11],[Q2_12],[Q2_13],[Q2_14],[Q2_Result],[Q3_1],[Q3_2],[Q3_3],[Q3_4],[Q4_1],[Q4_2],[Q4_1_1],[Q4_1_2]" +
+                ",[Q4_1_3],[Q4_2_1],[Q4_2_2],[Q4_2_3],[Q5],[Q6] FROM OHM_Oral6 o INNER JOIN OHM_Demography d on o.ChartNo = d.ChartNo").ToList<Oral6_IdNo>();
             StringBuilder sb = new StringBuilder();
             //Column
-            sb.Append("[Id],[Timestamp],[ChartNo],[Q1],[Q2_1],[Q2_2],[Q2_3],[Q2_4],[Q2_5],[Q2_6],[Q2_7],[Q2_8],[Q2_9],[Q2_10],[Q2_11],[Q2_12],[Q2_13],[Q2_14],[Q2_Result]" +
-                ",[Q3_1],[Q3_2],[Q3_3],[Q3_4],[Q4_1],[Q4_2],[Q5],[Q6]");
+            sb.Append("IdNo,[Id],[Timestamp],[ChartNo],[Q1],[Q2_1],[Q2_2],[Q2_3],[Q2_4],[Q2_5]" +
+                ",[Q2_6],[Q2_7],[Q2_8],[Q2_9],[Q2_10],[Q2_11],[Q2_12],[Q2_13],[Q2_14],[Q2_Result],[Q3_1],[Q3_2],[Q3_3],[Q3_4],[Q4_1],[Q4_2],[Q4_1_1],[Q4_1_2]" +
+                ",[Q4_1_3],[Q4_2_1],[Q4_2_2],[Q4_2_3],[Q5],[Q6]");
             //Append new line character.
             sb.Append("\r\n");
-            foreach (var demo in Oral6)
+            foreach (var demo in Oral6_IdNo)
             {
                 //Append data with separator.
+                sb.Append(demo.IdNo.ToString() + ',');
                 sb.Append(demo.Id + ',');
                 sb.Append(demo.Timestamp.ToString("yyyy-MM-dd HH:mm:ss:ff") + ',');
                 sb.Append(demo.ChartNo + ',');
@@ -72,6 +76,12 @@ namespace OralHealthManagement
                 sb.Append(demo.Q3_4.ToString() + ',');
                 sb.Append(demo.Q4_1.ToString() + ',');
                 sb.Append(demo.Q4_2.ToString() + ',');
+                sb.Append(demo.Q4_1_1.ToString() + ',');
+                sb.Append(demo.Q4_1_2.ToString() + ',');
+                sb.Append(demo.Q4_1_3.ToString() + ',');
+                sb.Append(demo.Q4_2_1.ToString() + ',');
+                sb.Append(demo.Q4_2_2.ToString() + ',');
+                sb.Append(demo.Q4_2_3.ToString() + ',');
                 sb.Append(demo.Q5.ToString() + ',');
                 sb.Append(demo.Q6.ToString());
 

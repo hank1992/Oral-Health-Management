@@ -50,127 +50,127 @@ namespace OralHealthManagement
 
             Exhaust.Total = 0;
 
-            if (Exhaust.Q1 == 1)
+            if (Exhaust.Q1 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q2 == 1)
+            if (Exhaust.Q2 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q3 == 1)
+            if (Exhaust.Q3 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q4 == 1)
+            if (Exhaust.Q4 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q5 == 1)
+            if (Exhaust.Q5 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q6 == 1)
+            if (Exhaust.Q6 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q7 == 1)
+            if (Exhaust.Q7 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q8 == 1)
+            if (Exhaust.Q8 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q9 == 0)
+            if (Exhaust.Q9 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q10 == 0)
+            if (Exhaust.Q10 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q11 == 0)
+            if (Exhaust.Q11 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q12 == 0)
+            if (Exhaust.Q12 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q13 == 0)
+            if (Exhaust.Q13 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q14 == 0)
+            if (Exhaust.Q14 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q15 == 0)
+            if (Exhaust.Q15 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q16 == 1)
+            if (Exhaust.Q16 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q17 == 0)
+            if (Exhaust.Q17 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q18 == 0)
+            if (Exhaust.Q18 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q19 == 1)
+            if (Exhaust.Q19 == 0)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q20 == 0)
+            if (Exhaust.Q20 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q21 == 0)
+            if (Exhaust.Q21 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q22 == 0)
+            if (Exhaust.Q22 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q23 == 0)
+            if (Exhaust.Q23 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q24 == 0)
+            if (Exhaust.Q24 == 1)
             {
                 Exhaust.Total++;
             }
 
-            if (Exhaust.Q25 == 0)
+            if (Exhaust.Q25 == 1)
             {
                 Exhaust.Total++;
             }
